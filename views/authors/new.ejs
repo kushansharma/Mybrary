@@ -1,1 +1,12 @@
-New Author Added
+<h2>New Author</h2>
+<%#form takes action for adding authors%>
+<%#action is url where form goes to%>
+<form action="/authors" method="POST"><%#/authors in routes/authors '/'.post section%>
+    <%#creating partial file cuz it shared btw two files%>
+    <%- include('_form_fields') %> 
+    <a href="/authors">Cancel</a><%#goes to authors page%>
+    <button type="submit">Create</button>
+</form>
+
+
+
