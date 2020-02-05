@@ -16,7 +16,8 @@ app.use(bodyParser.urlencoded({ limit:'10mb', extended: false}))//sending these 
 
 //db section
 const mongoose = require('mongoose')//import mongoose
-mongoose.connect('mongodb://localhost/mybrary' || process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true})
+//'mongodb://localhost/mybrary' || 
 const db = mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.log("Connected to Mongoose"))
